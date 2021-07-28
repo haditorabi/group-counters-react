@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEllipsisV, faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 import { AppContext } from '../context/AppContext';
 import { v4 as uuid } from 'uuid';
-import { newCounterMetadata } from '../App';
+// import { newCounterMetadata } from '../App';
 
 const CounterGroup = ({ groupId, group, label }) => {
 	const { dispatchData } = useContext(AppContext);
@@ -16,7 +16,7 @@ const CounterGroup = ({ groupId, group, label }) => {
 		limit,
 		incrementBy
 	};
-
+	const newCounterMetadata = { value: 0 };
 	const handleAddNewCounter = () => {
 		dispatchData({ type: 'ADD_COUNTER', payload: { groupId, id: uuid(), newCounter: newCounterMetadata } });
 	};
